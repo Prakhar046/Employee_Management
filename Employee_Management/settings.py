@@ -138,13 +138,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False  # Ensure SSL is disabled
 EMAIL_HOST_USER = 'prakhar9522@gmail.com'
 EMAIL_HOST_PASSWORD = 'sgir jcvg vact wnmo'
 DEFAULT_FROM_EMAIL = 'prakhar9522@gmail.com'
 
+# Explicitly disable SSL certfile and keyfile (Fix for Python 3.12)
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = None
+
 # Add this line to fix the SSL issue in Python 3.12
 EMAIL_SSL_CONTEXT = ssl.create_default_context()
-
 
 
 
