@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,8 +142,8 @@ EMAIL_HOST_USER = 'prakhar9522@gmail.com'
 EMAIL_HOST_PASSWORD = 'sgir jcvg vact wnmo'
 DEFAULT_FROM_EMAIL = 'prakhar9522@gmail.com'
 
-
-
+# Add this line to fix the SSL issue in Python 3.12
+EMAIL_SSL_CONTEXT = ssl.create_default_context()
 
 
 
